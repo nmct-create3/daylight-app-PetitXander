@@ -9,7 +9,15 @@
 :root {
     /* colors */
 
+    --color-dark:  #0F3557;
+    --color-light: #CCE7FF;
+
+
+    --color-front: var(--color-dark);
+    --color-back: var(--color-light);
+
     /* opacity */
+    --muted-opacity: 0.6;
 
     /* transitions */
 }
@@ -17,6 +25,12 @@
 /*------------------------------------*\
 #GENERIC
 \*------------------------------------*/
+
+.is-night{
+    --color-front: var(--color-light);
+    --color-back: var(--color-dark);
+
+}
 
 /*
     Generic: Page
@@ -27,8 +41,10 @@
 html {
     font-size: 16px;
     line-height: 1.5;
-    font-family: Helvetica, arial, sans-serif;
+    font-family: 'Work Sans', sans-serif;
     box-sizing: border-box;
+    color: var(--color-front);
+    background-color: var(--color-back);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -249,6 +265,11 @@ input::placeholder {
 */
 
 .c-logo {
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
 
 }
 
@@ -259,10 +280,14 @@ input::placeholder {
 */
 
 .c-sun {
+    width: 22px;
+    fill: var(--color-front);  
 
 }
 
 .c-logo .c-sun {
+    margin-right: 8px;
+
 
 }
 
@@ -271,6 +296,22 @@ input::placeholder {
     ---
     Main app wrapper
 */
+
+.c-app{
+    /*  max-width = 400/16 = 25 + 4em van de padding lang beide kanten*/
+    max-width: 29em;
+    margin: auto;
+    padding: 2em;
+    
+    
+
+}
+
+.c-app__summary{
+    font-size: 28px;
+    line-height: 40px;
+
+}
 
 /*
     Component: Horizon
@@ -286,6 +327,10 @@ input::placeholder {
     Utilities: Mute
     Mute with opacity
 */
+
+.u-muted{
+    opacity: var(--muted-opacity);
+}
 
 /*------------------------------------*\
 #STATES
